@@ -1,0 +1,38 @@
+<div class="container">
+    <h5 class="text-center">Please login to continue.</h5>
+    <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+      {{ errorMessage }}
+    </div>
+    <form
+    (submit)="onSubmit()" 
+    class="mx-auto w-50 shadow rounded p-3"> 
+       
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input 
+          type="email" 
+          class="form-control"
+          name="email" 
+          placeholder="Enter email"
+          [(ngModel)]="user.email"
+          />
+          <small *ngIf="errors.email" class="text-danger">{{ errors.email[0] }}</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input 
+          type="password" 
+          class="form-control"
+          name="password" 
+          placeholder="***********"
+          [(ngModel)]="user.password"/>
+          <small *ngIf="errors.password" class="text-danger">{{ errors.password[0] }}</small>
+        </div>
+        <div class="form-group mt-3 text-center">
+            <button type="submit" class="btn btn-primary" [disabled]="loading" >
+              <span *ngIf="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              <span>Login</span>
+            </button>
+        </div>
+    </form>
+</div>
