@@ -1,27 +1,43 @@
-# AiroFront
+# Airo Task
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+Coding Challenge
 
-## Development server
+## Backend server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `cd backend`
 
-## Code scaffolding
+Run `docker-compose up -d`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+onse project all images installed and go in their running state, so now we need to install componser, for this we need to go in backend image, then we are able to run composer command
 
-## Build
+Run `docker exec -it backend-backend-1 bash` 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `composer install`
 
-## Running unit tests
+Run `php artisan migrate`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Now we can access our API's on this url http://localhost:8000/api
 
-## Running end-to-end tests
+For phpmyadmin http://localhost:8001/
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+phpmyadmin credentials are described below
 
-## Further help
+Server: mysql
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Username:root
+
+password:root
+
+## Frontend
+
+Run `cd ..`
+
+Run `cd frontend`
+
+Run `npm install`
+
+Run `ng serve --o`
+
+Now we can access our frontend on this url http://localhost:4200
+
+
